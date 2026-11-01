@@ -182,6 +182,7 @@ function AutoJunkDisassembler_OnItemLooted( sourceInv : CInventoryComponent, pla
 {
 	var sourceEntity : CEntity;
 	var sourceContainer : W3Container;
+	var displayMount : W3DisplayMount;
 	var parts : array<SItemParts>;
 	var runesList : array<name>;
 	var itemQuality : int;
@@ -209,8 +210,18 @@ function AutoJunkDisassembler_OnItemLooted( sourceInv : CInventoryComponent, pla
 
 	sourceEntity = sourceInv.GetEntity();
 	sourceContainer = (W3Container)sourceEntity;
-	// Player stash and decorative mounts must not trigger automatic recycling.
-	if ( !sourceContainer || (W3PlayerStash)sourceContainer || (W3DisplayMount)sourceContainer )
+	if ( !sourceContainer )
+	{
+		return;
+	}
+
+	displayMount = (W3DisplayMount)sourceContainer;
+	if ( displayMount )
+	{
+		return;
+	}
+
+	if ( theGame.GameplayFactsQuerySum( "stashMode" ) > 0 )
 	{
 		return;
 	}
@@ -225,7 +236,7 @@ function AutoJunkDisassembler_OnItemLooted( sourceInv : CInventoryComponent, pla
 		return;
 	}
 
-	if ( thePlayer.IsItemEquipped( itemId ) )
+	if ( GetWitcherPlayer().IsItemEquipped( itemId ) )
 	{
 		return;
 	}
