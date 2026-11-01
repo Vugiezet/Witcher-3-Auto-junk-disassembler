@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserConfig>
+	<Group id="ModAutoJunkDisassembler" displayName="Mods.AutoJunkDisassembler" tags="nonLocalizedName">
+		<VisibleVars>
+			<Var id="EnableMod" displayName="Auto Disassembler: Aktywacja modu" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
+			<Var id="DisassembleJunk" displayName="Rozbieraj smieci (Junk)" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
+			<Var id="WeaponsMaxTier" displayName="Maksymalna rzadkosc broni" displayType="OPTIONS" tags="nonLocalizedName;customNames">
+				<OptionsArray>
+					<Option id="0" displayName="panel_mainmenu_option_value_off">
+						<Entry varId="WeaponsMaxTier" value="0"/>
+					</Option>
+					<Option id="1" displayName="panel_inventory_item_rarity_type_common">
+						<Entry varId="WeaponsMaxTier" value="1"/>
+					</Option>
+					<Option id="2" displayName="panel_inventory_item_rarity_type_masterwork">
+						<Entry varId="WeaponsMaxTier" value="2"/>
+					</Option>
+					<Option id="3" displayName="panel_inventory_item_rarity_type_magic">
+						<Entry varId="WeaponsMaxTier" value="3"/>
+					</Option>
+					<Option id="4" displayName="panel_inventory_item_rarity_type_relic">
+						<Entry varId="WeaponsMaxTier" value="4"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ArmorMaxTier" displayName="Maksymalna rzadkosc pancerzy" displayType="OPTIONS" tags="nonLocalizedName;customNames">
+				<OptionsArray>
+					<Option id="0" displayName="panel_mainmenu_option_value_off">
+						<Entry varId="ArmorMaxTier" value="0"/>
+					</Option>
+					<Option id="1" displayName="panel_inventory_item_rarity_type_common">
+						<Entry varId="ArmorMaxTier" value="1"/>
+					</Option>
+					<Option id="2" displayName="panel_inventory_item_rarity_type_masterwork">
+						<Entry varId="ArmorMaxTier" value="2"/>
+					</Option>
+					<Option id="3" displayName="panel_inventory_item_rarity_type_magic">
+						<Entry varId="ArmorMaxTier" value="3"/>
+					</Option>
+					<Option id="4" displayName="panel_inventory_item_rarity_type_relic">
+						<Entry varId="ArmorMaxTier" value="4"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+			<Var id="ProtectWitcherGear" displayName="Ochrona: Rynsztunek wiedzminski" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
+			<Var id="ProtectRelics" displayName="Ochrona: Przedmioty reliktowe" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
+			<Var id="ExtractRunes" displayName="Odzyskuj osadzone runy i glify" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
+			<Var id="PayBlacksmithFee" displayName="Pobieraj korony za rozbior (oplata jak u kowala)" displayType="TOGGLE" tags="nonLocalizedName" value="false"/>
+			<Var id="NotificationMode" displayName="Powiadomienia o rozbiorze" displayType="OPTIONS" tags="nonLocalizedName;customNames">
+				<OptionsArray>
+					<Option id="0" displayName="panel_mainmenu_option_value_off">
+						<Entry varId="NotificationMode" value="0"/>
+					</Option>
+					<Option id="1" displayName="Komunikat HUD">
+						<Entry varId="NotificationMode" value="1"/>
+					</Option>
+					<Option id="2" displayName="Baner powiadomienia">
+						<Entry varId="NotificationMode" value="2"/>
+					</Option>
+				</OptionsArray>
+			</Var>
+		</VisibleVars>
+	</Group>
+</UserConfig>

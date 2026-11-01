@@ -1,0 +1,7 @@
+# Witcher 3 mod compiler artifacts and temporary files
+*.bak
+*.orig
+*.dmp
+*.log
+.DS_Store
+Thumbs.db
