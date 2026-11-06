@@ -158,6 +158,26 @@ function AutoJunkDisassembler_ShouldPayFee() : bool
 	return val == "true";
 }
 
+function AutoJunkDisassembler_GetMinCrownsThreshold() : int
+{
+	var inGameConfig : CInGameConfigWrapper;
+	var val : string;
+
+	inGameConfig = theGame.GetInGameConfigWrapper();
+	if ( !inGameConfig )
+	{
+		return 0;
+	}
+
+	val = inGameConfig.GetVarValue( 'ModAutoJunkDisassembler', 'MinCrownsThreshold' );
+	if ( val == "" )
+	{
+		return 0;
+	}
+
+	return StringToInt( val, 0 );
+}
+
 function AutoJunkDisassembler_GetNotificationMode() : int
 {
 	var inGameConfig : CInGameConfigWrapper;
@@ -194,6 +214,11 @@ function AutoJunkDisassembler_OnItemLooted( sourceInv : CInventoryComponent, pla
 	var itemNameStr, addedSummary, partNameStr, notifyText : string;
 
 	if ( !AutoJunkDisassembler_IsModEnabled() )
+	{
+		return;
+	}
+
+	if ( thePlayer.GetMoney() < AutoJunkDisassembler_GetMinCrownsThreshold() )
 	{
 		return;
 	}

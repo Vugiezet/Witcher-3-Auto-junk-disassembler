@@ -46,6 +46,7 @@
 			<Var id="ProtectRelics" displayName="Ochrona: Przedmioty reliktowe" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
 			<Var id="ExtractRunes" displayName="Odzyskuj osadzone runy i glify" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
 			<Var id="PayBlacksmithFee" displayName="Pobieraj korony za rozbior (oplata jak u kowala)" displayType="TOGGLE" tags="nonLocalizedName" value="false"/>
+			<Var id="MinCrownsThreshold" displayName="Minimalna liczba koron do rozbioru" displayType="SLIDER;0;10000;20" tags="nonLocalizedName" value="0"/>
 			<Var id="NotificationMode" displayName="Powiadomienia o rozbiorze" displayType="OPTIONS" tags="nonLocalizedName;customNames">
 				<OptionsArray>
 					<Option id="0" displayName="panel_mainmenu_option_value_off">
