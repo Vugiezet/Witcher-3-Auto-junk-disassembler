@@ -23,14 +23,15 @@ Wszystkie parametry modu można dostosować w menu gry (Opcje > Menu Modyfikacji
   * Całkowite pomijanie przedmiotów fabularnych (Quest), trofeów, książek, listów, narzędzi naprawczych oraz rzędu końskiego.
   * Pomijanie skrytki gracza (Schowek) oraz stojaków w Corvo Bianco.
 * **Odzyskiwanie ulepszeń:** Automatyczny zwrot osadzonych run i glifów z rozbieranego uzbrojenia bezpośrednio do ekwipunku Geralta.
-* **Opcjonalna opłata rzemieślnicza:** Możliwość włączenia pobierania standardowej opłaty w koronach, identycznie jak u kowala w grze. Jeśli Geralt nie posiada wystarczającej liczby koron, przedmiot pozostaje w całości.
-* **Konfigurowalne powiadomienia:** Wybór pomiędzy banerem powiadomienia na ekranie, krótkim komunikatem HUD lub całkowicie cichym działaniem w tle.
+* **Opcjonalna opłata rzemieślnicza:** Możliwość włączenia pobierania standardowej opłaty w koronach, identycznie jak u kowala w grze. Jeśli Geralt nie posiada wystarczającej liczby koron na opłatę, przedmiot pozostaje w całości.
+* **Minimalny próg koron:** Suwak (od 0 do 10 000 koron, skok co 500) zabezpieczający oszczędności gracza. Rozbiór następuje tylko wtedy, gdy stan konta Geralta jest równy lub wyższy od ustawionego progu.
+* **Konfigurowalne powiadomienia:** Wybór pomiędzy krótkim komunikatem HUD, szczegółowym komunikatem lub wyłączeniem powiadomień.
 
 ---
 
 ## Opcje w menu gry
 
-Menu znajduje się w: `Opcje > Menu Modyfikacji > Auto Junk Disassembler`.
+Menu znajduje się w: `Opcje > Mody > Auto Junk Disassembler`.
 
 | Opcja | Domyślnie | Opis |
 |---|---|---|
@@ -42,7 +43,8 @@ Menu znajduje się w: `Opcje > Menu Modyfikacji > Auto Junk Disassembler`.
 | Ochrona: Przedmioty reliktowe | Włączone | Zabezpiecza relikty przed przypadkowym zniszczeniem. |
 | Odzyskuj osadzone runy i glify | Włączone | Zwraca zamontowane ulepszenia do ekwipunku. |
 | Pobieraj korony za rozbiór | Wyłączone | Pobiera opłatę w koronach zgodną z cennikiem kowalskim. |
-| Powiadomienia o rozbiorze | Baner | Format powiadomień: Wył. / Komunikat HUD / Baner na ekranie. |
+| Minimalna liczba koron do rozbioru | 0 | Suwak limitu portfela (0-10000, co 500). Poniżej limitu rozbiór jest wstrzymany. |
+| Powiadomienia o rozbiorze | Krótki komunikat | Format powiadomień: Wył. / Krótki komunikat HUD / Szczegółowy komunikat HUD. |
 
 ---
 

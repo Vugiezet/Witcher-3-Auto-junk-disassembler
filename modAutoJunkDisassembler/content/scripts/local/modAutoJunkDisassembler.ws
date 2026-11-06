@@ -376,14 +376,13 @@ function AutoJunkDisassembler_OnItemLooted( sourceInv : CInventoryComponent, pla
 
 	if ( AutoJunkDisassembler_GetNotificationMode() > 0 && itemNameStr != "" )
 	{
-		notifyText = "<font color=\"#d4a259\">" + GetLocStringByKeyExt( "panel_blacksmith_items_removed" ) + ": </font>"
-			+ itemNameStr + " x" + IntToString( dismantleCount )
-			+ "<br/><font color=\"#6ca365\">" + GetLocStringByKeyExt( "panel_blacksmith_items_added" ) + ": </font>"
-			+ addedSummary;
-
 		if ( AutoJunkDisassembler_GetNotificationMode() == 2 )
 		{
-			theGame.GetGuiManager().ShowNotification( notifyText, 4.0 );
+			notifyText = GetLocStringByKeyExt( "panel_blacksmith_items_removed" ) + ": "
+				+ itemNameStr + " x" + IntToString( dismantleCount ) + " | "
+				+ GetLocStringByKeyExt( "panel_blacksmith_items_added" ) + ": "
+				+ addedSummary;
+			thePlayer.DisplayHudMessage( notifyText );
 		}
 		else
 		{

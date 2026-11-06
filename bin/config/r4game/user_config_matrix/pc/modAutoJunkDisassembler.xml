@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <UserConfig>
-	<Group id="ModAutoJunkDisassembler" displayName="Mods.AutoJunkDisassembler" tags="nonLocalizedName">
+	<Group id="ModAutoJunkDisassembler" displayName="Mods.Auto Junk Disassembler" tags="nonLocalizedName">
 		<VisibleVars>
 			<Var id="EnableMod" displayName="Auto Disassembler: Aktywacja modu" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
 			<Var id="DisassembleJunk" displayName="Rozbieraj smieci (Junk)" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
@@ -52,10 +52,10 @@
 					<Option id="0" displayName="panel_mainmenu_option_value_off">
 						<Entry varId="NotificationMode" value="0"/>
 					</Option>
-					<Option id="1" displayName="Komunikat HUD">
+					<Option id="1" displayName="Krotki komunikat HUD">
 						<Entry varId="NotificationMode" value="1"/>
 					</Option>
-					<Option id="2" displayName="Baner powiadomienia">
+					<Option id="2" displayName="Szczegolowy komunikat HUD">
 						<Entry varId="NotificationMode" value="2"/>
 					</Option>
 				</OptionsArray>
