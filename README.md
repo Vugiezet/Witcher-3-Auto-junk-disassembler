@@ -25,7 +25,7 @@ Wszystkie parametry modu można dostosować w menu gry (Opcje > Menu Modyfikacji
 * **Odzyskiwanie ulepszeń:** Automatyczny zwrot osadzonych run i glifów z rozbieranego uzbrojenia bezpośrednio do ekwipunku Geralta.
 * **Opcjonalna opłata rzemieślnicza:** Możliwość włączenia pobierania standardowej opłaty w koronach, identycznie jak u kowala w grze. Jeśli Geralt nie posiada wystarczającej liczby koron na opłatę, przedmiot pozostaje w całości.
 * **Minimalny próg koron:** Suwak (od 0 do 10 000 koron, skok co 500) zabezpieczający oszczędności gracza. Rozbiór następuje tylko wtedy, gdy stan konta Geralta jest równy lub wyższy od ustawionego progu.
-* **Konfigurowalne powiadomienia:** Wybór pomiędzy krótkim komunikatem HUD, szczegółowym komunikatem lub wyłączeniem powiadomień.
+* **Graficzne i skonsolidowane powiadomienia:** Graficzny feed w lewym dolnym rogu ekranu (ikona surowca i łączna liczba w kafelku HUD) oraz zbiorczy komunikat. Przy zebraniu wielu przedmiotów naraz powiadomienie jest łączone w jedno, bez zaśmiecania ekranu.
 
 ---
 
@@ -44,7 +44,7 @@ Menu znajduje się w: `Opcje > Mody > Auto Junk Disassembler`.
 | Odzyskuj osadzone runy i glify | Włączone | Zwraca zamontowane ulepszenia do ekwipunku. |
 | Pobieraj korony za rozbiór | Wyłączone | Pobiera opłatę w koronach zgodną z cennikiem kowalskim. |
 | Minimalna liczba koron do rozbioru | 0 | Suwak limitu portfela (0-10000, co 500). Poniżej limitu rozbiór jest wstrzymany. |
-| Powiadomienia o rozbiorze | Krótki komunikat | Format powiadomień: Wył. / Krótki komunikat HUD / Szczegółowy komunikat HUD. |
+| Powiadomienia o rozbiorze | Włączone | Przełącznik powiadomień graficznych i tekstowych o otrzymanych surowcach. |
 
 ---
 

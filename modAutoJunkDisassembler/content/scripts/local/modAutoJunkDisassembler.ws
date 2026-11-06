@@ -178,7 +178,7 @@ function AutoJunkDisassembler_GetMinCrownsThreshold() : int
 	return StringToInt( val, 0 );
 }
 
-function AutoJunkDisassembler_GetNotificationMode() : int
+function AutoJunkDisassembler_IsNotificationEnabled() : bool
 {
 	var inGameConfig : CInGameConfigWrapper;
 	var val : string;
@@ -186,16 +186,32 @@ function AutoJunkDisassembler_GetNotificationMode() : int
 	inGameConfig = theGame.GetInGameConfigWrapper();
 	if ( !inGameConfig )
 	{
-		return 2;
+		return true;
 	}
 
 	val = inGameConfig.GetVarValue( 'ModAutoJunkDisassembler', 'NotificationMode' );
 	if ( val == "" )
 	{
-		return 2;
+		return true;
 	}
 
-	return StringToInt( val, 2 );
+	return val != "false" && val != "0";
+}
+
+function AutoJunkDisassembler_NotifyPartObtained( itemName : name, quantity : int ) : void
+{
+	var lootFeed : CR4HudModuleLootFeed;
+
+	if ( !AutoJunkDisassembler_IsNotificationEnabled() || quantity <= 0 )
+	{
+		return;
+	}
+
+	lootFeed = GetLootFeedHUDElement();
+	if ( lootFeed )
+	{
+		lootFeed.QueueDisassembledPart( itemName, quantity );
+	}
 }
 
 function AutoJunkDisassembler_OnItemLooted( sourceInv : CInventoryComponent, playerInv : CInventoryComponent, itemId : SItemUniqueId, quantity : int ) : void
@@ -211,7 +227,6 @@ function AutoJunkDisassembler_OnItemLooted( sourceInv : CInventoryComponent, pla
 	var invItem : SInventoryItem;
 	var feeUnit, totalFee : int;
 	var i, partYield : int;
-	var itemNameStr, addedSummary, partNameStr, notifyText : string;
 
 	if ( !AutoJunkDisassembler_IsModEnabled() )
 	{
@@ -345,48 +360,25 @@ function AutoJunkDisassembler_OnItemLooted( sourceInv : CInventoryComponent, pla
 		}
 	}
 
-	itemNameStr = GetLocStringByKeyExt( playerInv.GetItemLocalizedNameByUniqueID( itemId ) );
-
 	if ( AutoJunkDisassembler_ShouldExtractRunes() && playerInv.GetItemEnhancementCount( itemId ) > 0 && !playerInv.IsItemEnchanted( itemId ) )
 	{
 		playerInv.GetItemEnhancementItems( itemId, runesList );
 		for ( i = 0; i < runesList.Size(); i += 1 )
 		{
 			playerInv.AddAnItem( runesList[i], 1, false, false );
+			AutoJunkDisassembler_NotifyPartObtained( runesList[i], 1 );
 		}
 	}
 
-	addedSummary = "";
 	for ( i = 0; i < parts.Size(); i += 1 )
 	{
 		partYield = parts[i].quantity * dismantleCount;
 		if ( partYield > 0 )
 		{
 			playerInv.AddAnItem( parts[i].itemName, partYield, false, false );
-			partNameStr = GetLocStringByKeyExt( playerInv.GetItemLocalizedNameByName( parts[i].itemName ) );
-			if ( addedSummary != "" )
-			{
-				addedSummary += ", ";
-			}
-			addedSummary += partNameStr + " x" + IntToString( partYield );
+			AutoJunkDisassembler_NotifyPartObtained( parts[i].itemName, partYield );
 		}
 	}
 
 	playerInv.RemoveItem( itemId, dismantleCount );
-
-	if ( AutoJunkDisassembler_GetNotificationMode() > 0 && itemNameStr != "" )
-	{
-		if ( AutoJunkDisassembler_GetNotificationMode() == 2 )
-		{
-			notifyText = GetLocStringByKeyExt( "panel_blacksmith_items_removed" ) + ": "
-				+ itemNameStr + " x" + IntToString( dismantleCount ) + " | "
-				+ GetLocStringByKeyExt( "panel_blacksmith_items_added" ) + ": "
-				+ addedSummary;
-			thePlayer.DisplayHudMessage( notifyText );
-		}
-		else
-		{
-			thePlayer.DisplayHudMessage( itemNameStr + " -> " + addedSummary );
-		}
-	}
 }

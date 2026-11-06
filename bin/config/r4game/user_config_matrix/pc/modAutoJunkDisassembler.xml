@@ -47,19 +47,7 @@
 			<Var id="ExtractRunes" displayName="Odzyskuj osadzone runy i glify" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
 			<Var id="PayBlacksmithFee" displayName="Pobieraj korony za rozbior (oplata jak u kowala)" displayType="TOGGLE" tags="nonLocalizedName" value="false"/>
 			<Var id="MinCrownsThreshold" displayName="Minimalna liczba koron do rozbioru" displayType="SLIDER;0;10000;20" tags="nonLocalizedName" value="0"/>
-			<Var id="NotificationMode" displayName="Powiadomienia o rozbiorze" displayType="OPTIONS" tags="nonLocalizedName;customNames">
-				<OptionsArray>
-					<Option id="0" displayName="panel_mainmenu_option_value_off">
-						<Entry varId="NotificationMode" value="0"/>
-					</Option>
-					<Option id="1" displayName="Krotki komunikat HUD">
-						<Entry varId="NotificationMode" value="1"/>
-					</Option>
-					<Option id="2" displayName="Szczegolowy komunikat HUD">
-						<Entry varId="NotificationMode" value="2"/>
-					</Option>
-				</OptionsArray>
-			</Var>
+			<Var id="NotificationMode" displayName="Powiadomienia o rozbiorze" displayType="TOGGLE" tags="nonLocalizedName" value="true"/>
 		</VisibleVars>
 	</Group>
 </UserConfig>
